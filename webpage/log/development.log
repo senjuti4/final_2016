@@ -10,3 +10,4067 @@ Started GET "/" for 127.0.0.1 at 2016-05-12 12:03:43 -0400
 Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb (0.0ms)
 Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-12 12:29:48 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (2.0ms)
+Completed 200 OK in 26ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (88.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (55.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateReviews (20160512163423)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar(255), "description" text, "video_url" varchar(255), "picture_url" varchar(255), "comment" text, "rating" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160512163423"]]
+  [1m[35m (64.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/locations" for 127.0.0.1 at 2016-05-12 12:37:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/locations"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/Ruby2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (57.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (123.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:37:22 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb (2.0ms)
+Completed 200 OK in 35ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2016-05-12 12:37:25 -0400
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (116.0ms)
+  Rendered reviews/new.html.erb (119.0ms)
+Completed 200 OK in 132ms (Views: 130.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-12 12:37:45 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2016-05-12 12:39:15 -0400
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6bMJfkP4uay/hhoyNUpiSZ9esU8p4YdR+mWTAek729s=", "review"=>{"location"=>"Italy", "description"=>"if what you are looking for is a unique and memorable experience that will give you the opportunity to learn about another culture through art, cultural events, historical cites, and archeological treasures, a place to visit is certainly Italy. Among many places in the world where you can relive the past, Italy is certainly the most charming place. This little country in the middle of the Mediterranean represents the cradle of the Roman Empire and the Renaissance, and offers an incredible number of opportunities for people eager to learn about an ancient civilization that shaped the history of many cultures", "video_url"=>"", "picture_url"=>"http://kindertravelguide.com/wp-content/uploads/2015/11/italian-riviera1-slide1.jpg", "comment"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "reviews" ("comment", "created_at", "description", "location", "picture_url", "rating", "updated_at", "video_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["comment", ""], ["created_at", "2016-05-12 16:39:15.273760"], ["description", "if what you are looking for is a unique and memorable experience that will give you the opportunity to learn about another culture through art, cultural events, historical cites, and archeological treasures, a place to visit is certainly Italy. Among many places in the world where you can relive the past, Italy is certainly the most charming place. This little country in the middle of the Mediterranean represents the cradle of the Roman Empire and the Renaissance, and offers an incredible number of opportunities for people eager to learn about an ancient civilization that shaped the history of many cultures"], ["location", "Italy"], ["picture_url", "http://kindertravelguide.com/wp-content/uploads/2015/11/italian-riviera1-slide1.jpg"], ["rating", ""], ["updated_at", "2016-05-12 16:39:15.273760"], ["video_url", ""]]
+  [1m[36m (65.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/1
+Completed 302 Found in 96ms (ActiveRecord: 67.0ms)
+
+
+Started GET "/reviews/1" for 127.0.0.1 at 2016-05-12 12:39:15 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReview Load (1.0ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews/show.html.erb (1.0ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:39:18 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb (3.0ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2016-05-12 12:39:23 -0400
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (3.0ms)
+  Rendered reviews/new.html.erb (5.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2016-05-12 12:40:02 -0400
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6bMJfkP4uay/hhoyNUpiSZ9esU8p4YdR+mWTAek729s=", "review"=>{"location"=>"Egypt", "description"=>"Ancient Egypt is a wonderful land of mystery. People today still have no idea how to duplicate some of the achievements of Ancient Egyptians. Egypt became a great civilization due to many things, but there were three that seem to stand out above the rest. They were the geography, culture, and Architecture.Egypt can be divided into four major regions: the Nile Valley and Delta, the Arabian Desert, the Libyan Desert, and the Sinai. The Nile River valley is about 950 mi. long. In the south the valley is rarely more than 2 mi. wide.", "video_url"=>"", "picture_url"=>"http://science-all.com/images/egypt/egypt-04.jpg", "comment"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "reviews" ("comment", "created_at", "description", "location", "picture_url", "rating", "updated_at", "video_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["comment", ""], ["created_at", "2016-05-12 16:40:02.604492"], ["description", "Ancient Egypt is a wonderful land of mystery. People today still have no idea how to duplicate some of the achievements of Ancient Egyptians. Egypt became a great civilization due to many things, but there were three that seem to stand out above the rest. They were the geography, culture, and Architecture.Egypt can be divided into four major regions: the Nile Valley and Delta, the Arabian Desert, the Libyan Desert, and the Sinai. The Nile River valley is about 950 mi. long. In the south the valley is rarely more than 2 mi. wide."], ["location", "Egypt"], ["picture_url", "http://science-all.com/images/egypt/egypt-04.jpg"], ["rating", ""], ["updated_at", "2016-05-12 16:40:02.604492"], ["video_url", ""]]
+  [1m[35m (86.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/reviews/2
+Completed 302 Found in 95ms (ActiveRecord: 88.0ms)
+
+
+Started GET "/reviews/2" for 127.0.0.1 at 2016-05-12 12:40:02 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered reviews/show.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:40:27 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb (4.0ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2016-05-12 12:40:28 -0400
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (6.0ms)
+  Rendered reviews/new.html.erb (8.0ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2016-05-12 12:41:15 -0400
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6bMJfkP4uay/hhoyNUpiSZ9esU8p4YdR+mWTAek729s=", "review"=>{"location"=>"France", "description"=>"France, which is the largest nation in Western Europe, is a presidential republic.  France is a very important nation in Europe and it continues to be involved in contemporary policy issues.  Helping the world as one of the great trading nations, France is a very important trading partner with the United States.  Not only is France important to the United States, they are also important to countries all over the world.  Their abundance of both mineral and agricultural resources make them a very important supplier of products all over the world.  I chose to report on France because it is an interesting county and I wanted to learn more about it.", "video_url"=>"", "picture_url"=>"http://www.timeforkids.com/files/styles/tfk_rect_large/public/2011-07/france_ss2.jpg?itok=aW-EM84A", "comment"=>"", "rating"=>""}, "commit"=>"Create Review"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "reviews" ("comment", "created_at", "description", "location", "picture_url", "rating", "updated_at", "video_url") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["comment", ""], ["created_at", "2016-05-12 16:41:15.704802"], ["description", "France, which is the largest nation in Western Europe, is a presidential republic.  France is a very important nation in Europe and it continues to be involved in contemporary policy issues.  Helping the world as one of the great trading nations, France is a very important trading partner with the United States.  Not only is France important to the United States, they are also important to countries all over the world.  Their abundance of both mineral and agricultural resources make them a very important supplier of products all over the world.  I chose to report on France because it is an interesting county and I wanted to learn more about it."], ["location", "France"], ["picture_url", "http://www.timeforkids.com/files/styles/tfk_rect_large/public/2011-07/france_ss2.jpg?itok=aW-EM84A"], ["rating", ""], ["updated_at", "2016-05-12 16:41:15.704802"], ["video_url", ""]]
+  [1m[36m (130.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/3
+Completed 302 Found in 138ms (ActiveRecord: 131.0ms)
+
+
+Started GET "/reviews/3" for 127.0.0.1 at 2016-05-12 12:41:15 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mReview Load (1.0ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered reviews/show.html.erb (1.0ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:41:21 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb (4.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:43:15 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:44:41 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 1544ms (Views: 1531.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:44:43 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 235ms (Views: 234.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:49 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:45:50 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 232ms (Views: 231.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:46:35 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:50:14 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:50:14 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:50:14 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:50:14 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:50:14 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 270ms (Views: 267.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:46 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:51:47 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:52:53 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (38.0ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (undefined local variable or method `review' for #<#<Class:0x74d5130>:0x7958598>):
+    35: 
+    36: <div class="media-object stack-for-small">
+    37:   <div class="media-object-section">
+    38:     <img class="thumbnail" src=<td><%= review.picture_url %></td> width="598"/>
+    39:   </div>
+    40:   <div class="media-object-section">
+    41:     <h1>ITALY</h1>
+  app/views/reviews/index.html.erb:38:in `_app_views_reviews_index_html_erb___804726075_63609228'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:53:16 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined local variable or method `review' for #<#<Class:0x74d5130>:0x73f83d8>):
+    35: 
+    36: <div class="media-object stack-for-small">
+    37:   <div class="media-object-section">
+    38:     <img class="thumbnail" src=<%= review.picture_url %> width="598"/>
+    39:   </div>
+    40:   <div class="media-object-section">
+    41:     <h1>ITALY</h1>
+  app/views/reviews/index.html.erb:38:in `_app_views_reviews_index_html_erb___804726075_60725868'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:53:17 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (19.0ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined local variable or method `review' for #<#<Class:0x74d5130>:0x7093cb0>):
+    35: 
+    36: <div class="media-object stack-for-small">
+    37:   <div class="media-object-section">
+    38:     <img class="thumbnail" src=<%= review.picture_url %> width="598"/>
+    39:   </div>
+    40:   <div class="media-object-section">
+    41:     <h1>ITALY</h1>
+  app/views/reviews/index.html.erb:38:in `_app_views_reviews_index_html_erb___804726075_60725868'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:53:27 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 240ms (Views: 239.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:53:28 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:54:02 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (undefined local variable or method `review' for #<#<Class:0x74d5130>:0x4c9e528>):
+    35: 
+    36: <div class="media-object stack-for-small">
+    37:   <div class="media-object-section">
+    38:     <img class="thumbnail" src="<%= review.picture_url %>" width="598"/>
+    39:   </div>
+    40:   <div class="media-object-section">
+    41:     <h1>ITALY</h1>
+  app/views/reviews/index.html.erb:38:in `_app_views_reviews_index_html_erb___804726075_40165416'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:54:14 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (undefined local variable or method `review' for #<#<Class:0x74d5130>:0x3c3a008>):
+    35: 
+    36: <div class="media-object stack-for-small">
+    37:   <div class="media-object-section">
+    38:     <img class="thumbnail" src=<%= review.picture_url %> width="598"/>
+    39:   </div>
+    40:   <div class="media-object-section">
+    41:     <h1>ITALY</h1>
+  app/views/reviews/index.html.erb:38:in `_app_views_reviews_index_html_erb___804726075_31542336'
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 236ms (Views: 235.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:58 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:58 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:57:58 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:58:25 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 233ms (Views: 231.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:58:25 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:58:25 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:58:26 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:58:59 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 233ms (Views: 232.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:00 -0400
+
+
+Started GET "/reviews/1" for 127.0.0.1 at 2016-05-12 12:59:02 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 255ms (Views: 251.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:02 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:02 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:02 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:03 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:59:04 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 218ms (Views: 217.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:04 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:04 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:04 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:05 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 281ms (Views: 279.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 12:59:59 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 231ms (Views: 229.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:26 -0400
+
+
+Started GET "/reviews/1/edit" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered reviews/_form.html.erb (37.0ms)
+  Rendered reviews/edit.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 270ms (Views: 267.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:44 -0400
+
+
+Started PATCH "/reviews/1" for 127.0.0.1 at 2016-05-12 13:00:49 -0400
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6bMJfkP4uay/hhoyNUpiSZ9esU8p4YdR+mWTAek729s=", "review"=>{"location"=>"Italy", "description"=>"If what you are looking for is a unique and memorable experience that will give you the opportunity to learn about another culture through art, cultural events, historical cites, and archeological treasures, a place to visit is certainly Italy. Among many places in the world where you can relive the past, Italy is certainly the most charming place. This little country in the middle of the Mediterranean represents the cradle of the Roman Empire and the Renaissance, and offers an incredible number of opportunities for people eager to learn about an ancient civilization that shaped the history of many cultures", "video_url"=>"", "picture_url"=>"http://kindertravelguide.com/wp-content/uploads/2015/11/italian-riviera1-slide1.jpg", "comment"=>"", "rating"=>""}, "commit"=>"Update Review", "id"=>"1"}
+  [1m[35mReview Load (0.0ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "reviews" SET "description" = ?, "updated_at" = ? WHERE "reviews"."id" = 1  [["description", "If what you are looking for is a unique and memorable experience that will give you the opportunity to learn about another culture through art, cultural events, historical cites, and archeological treasures, a place to visit is certainly Italy. Among many places in the world where you can relive the past, Italy is certainly the most charming place. This little country in the middle of the Mediterranean represents the cradle of the Roman Empire and the Renaissance, and offers an incredible number of opportunities for people eager to learn about an ancient civilization that shaped the history of many cultures"], ["updated_at", "2016-05-12 17:00:49.873794"]]
+  [1m[36m (98.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/1
+Completed 302 Found in 109ms (ActiveRecord: 99.0ms)
+
+
+Started GET "/reviews/1" for 127.0.0.1 at 2016-05-12 13:00:49 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mReview Load (0.0ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered reviews/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 236ms (Views: 234.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:50 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 251ms (Views: 250.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:00:52 -0400
+
+
+Started GET "/reviews/2/edit" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mReview Load (1.0ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered reviews/_form.html.erb (6.0ms)
+  Rendered reviews/edit.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 230ms (Views: 227.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:43 -0400
+
+
+Started PATCH "/reviews/2" for 127.0.0.1 at 2016-05-12 13:01:54 -0400
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6bMJfkP4uay/hhoyNUpiSZ9esU8p4YdR+mWTAek729s=", "review"=>{"location"=>"Egypt", "description"=>"Ancient Egypt is a wonderful land of mystery. People today still have no idea how to duplicate some of the achievements of Ancient Egyptians. Egypt became a great civilization due to many things, but there were three that seem to stand out above the rest. They were the geography, culture, and Architecture.Egypt can be divided into four major regions: the Nile Valley and Delta, the Arabian Desert, the Libyan Desert, and the Sinai. The Nile River valley is about 950 mi. long. In the south the valley is rarely more than 2 mi. wide.", "video_url"=>"", "picture_url"=>"http://science-all.com/images/egypt/egypt-04.jpg", "comment"=>"", "rating"=>""}, "commit"=>"Update Review", "id"=>"2"}
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/2
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/reviews/2" for 127.0.0.1 at 2016-05-12 13:01:54 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mReview Load (0.0ms)[0m  SELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered reviews/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 236ms (Views: 235.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:55 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:01:56 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 244ms (Views: 243.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:01:57 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:02:05 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 260ms (Views: 260.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:06 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-12 13:02:38 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 252ms (Views: 252.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:38 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:38 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:39 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 245ms (Views: 245.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:48 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:48 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:02:48 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 232ms (Views: 230.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:03:05 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:04:25 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 255ms (Views: 255.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:26 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 240ms (Views: 238.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:04:58 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 292ms (Views: 290.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:05:29 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:07:09 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 320ms (Views: 318.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:07:10 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:10:01 -0400
+Processing by ReviewsController#index as HTML
+  Rendered reviews/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 10ms
+
+SyntaxError (c:/Sites/final_2016/webpage/app/views/reviews/index.html.erb:22: syntax error, unexpected '='
+...eview', new_review_path, class="button");@output_buffer.safe...
+...                               ^
+c:/Sites/final_2016/webpage/app/views/reviews/index.html.erb:33: syntax error, unexpected keyword_do_block, expecting keyword_end
+'.freeze;     @reviews.each do |review| 
+                              ^
+c:/Sites/final_2016/webpage/app/views/reviews/index.html.erb:144: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/reviews/index.html.erb:22: syntax error, unexpected '='
+  app/views/reviews/index.html.erb:33: syntax error, unexpected keyword_do_block, expecting keyword_end
+  app/views/reviews/index.html.erb:144: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:10:10 -0400
+Processing by ReviewsController#index as HTML
+  Rendered reviews/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 10ms
+
+SyntaxError (c:/Sites/final_2016/webpage/app/views/reviews/index.html.erb:22: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+... Review', new_review_path class="button");@output_buffer.saf...
+...                               ^
+c:/Sites/final_2016/webpage/app/views/reviews/index.html.erb:33: syntax error, unexpected keyword_do_block, expecting keyword_end
+'.freeze;     @reviews.each do |review| 
+                              ^
+c:/Sites/final_2016/webpage/app/views/reviews/index.html.erb:144: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/reviews/index.html.erb:22: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+  app/views/reviews/index.html.erb:33: syntax error, unexpected keyword_do_block, expecting keyword_end
+  app/views/reviews/index.html.erb:144: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.0ms)
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 259ms (Views: 257.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:24 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:12:25 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 230ms (Views: 229.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:09 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 237ms (Views: 237.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:27 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:28 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:28 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:28 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:14:28 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 257ms (Views: 256.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:00 -0400
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2016-05-12 13:15:04 -0400
+Processing by ReviewsController#new as HTML
+  Rendered reviews/_form.html.erb (5.0ms)
+  Rendered reviews/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 274ms (Views: 273.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:05 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 224ms (Views: 223.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:13 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 242ms (Views: 240.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:15:44 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 235ms (Views: 234.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:16:13 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 236ms (Views: 234.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:41 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:17:42 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 240ms (Views: 237.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:18:59 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:19:00 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:19:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:19:00 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:19:00 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:20:13 -0400
+Processing by ReviewsController#index as HTML
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 243ms (Views: 242.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:20:14 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:23:05 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 267ms (Views: 265.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/reviews.css?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:23:06 -0400
+
+
+Started GET "/reviews/2" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReview Load (0.0ms)[0m  [1mSELECT  "reviews".* FROM "reviews"  WHERE "reviews"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered reviews/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 249ms (Views: 245.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:23 -0400
+
+
+Started GET "/reviews" for 127.0.0.1 at 2016-05-12 13:24:24 -0400
+Processing by ReviewsController#index as HTML
+  [1m[35mReview Load (0.0ms)[0m  SELECT "reviews".* FROM "reviews"
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 221ms (Views: 220.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.slider.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
+
+
+Started GET "/assets/reviews.js?body=1" for 127.0.0.1 at 2016-05-12 13:24:25 -0400
